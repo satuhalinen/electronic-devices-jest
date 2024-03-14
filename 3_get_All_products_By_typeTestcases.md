@@ -21,18 +21,20 @@ searches products with given type
 `type` phone returns
 
 ```json
-{
-  "id": 2,
-  "type": "phone",
-  "price": 15,
-  "manufacturer": "Penquin appliances",
-  "colors": ["white", "blue", "black"],
-  "extras": {
-    "model": "GT",
-    "comments": "-",
-    "energyclass": "E"
+[
+  {
+    "id": 2,
+    "type": "phone",
+    "price": 15,
+    "manufacturer": "Penquin appliances",
+    "colors": ["white", "blue", "black"],
+    "extras": {
+      "model": "GT",
+      "comments": "-",
+      "energyclass": "E"
+    }
   }
-}
+]
 ```
 
 `type` tv returns

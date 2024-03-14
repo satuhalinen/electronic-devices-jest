@@ -15,6 +15,18 @@ class ProductStorage {
       ? true
       : false;
   }
+  get_All_products_By_type(searchValue) {
+    if (arguments.length < 1) {
+      throw new Error("missing parameter");
+    }
+    const objectsFound = [];
+    for (const product of this.#storage) {
+      if (product.type === searchValue) {
+        objectsFound.push(product);
+      }
+    }
+    return objectsFound;
+  }
 }
 
 module.exports = ProductStorage;
