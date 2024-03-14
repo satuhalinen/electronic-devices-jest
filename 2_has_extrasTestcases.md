@@ -18,7 +18,13 @@ Method checks based on id if the product has `extras` or not.
 
 ### 1. product matching the searchKey has `extras` object and it is not an empty object
 
-testdata
+testing with
+
+```js
+searchKey(1);
+```
+
+with testdata
 
 ```json
 [
@@ -62,6 +68,24 @@ returns false
 
 ```js
 has_extras();
+```
+
+returns false
+
+### 4. extras is missing
+
+testdata
+
+```json
+[
+  {
+    "id": 5,
+    "type": "phone",
+    "price": 123,
+    "manufacturer": "Electric devices",
+    "colors": ["orange", "red", "white"]
+  }
+]
 ```
 
 returns false
