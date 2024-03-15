@@ -27,6 +27,10 @@ class ProductStorage {
     }
     return objectsFound;
   }
+  get_extras(searchKey) {
+    const product = this.#storage.find((item) => item.id === searchKey);
+    return product ? product.extras : null;
+  }
 }
 
 module.exports = ProductStorage;

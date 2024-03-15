@@ -34,7 +34,7 @@ returns
 }
 ```
 
-## Test 2. no product matching the given searchKey is found
+## Test 2. matching searchKey is not found
 
 testdata is default data
 

@@ -150,3 +150,25 @@ describe("Test cases for get_All_products_By_type", () => {
     );
   });
 });
+
+describe("Test cases for get_extras", () => {
+  test("matching searchKey found", () => {
+    const storage = new ProductStorage(datastorage);
+    const result = {
+      model: "gold",
+      comments: "high quality",
+      energyclass: "A++",
+    };
+    expect(storage.get_extras(1)).toEqual(result);
+  });
+  test("matching searchKey is not found", () => {
+    const storage = new ProductStorage(datastorage);
+    const result = null;
+    expect(storage.get_extras(6)).toEqual(result);
+  });
+  test("searchKey is missing", () => {
+    const storage = new ProductStorage(datastorage);
+    const result = null;
+    expect(storage.get_extras()).toEqual(result);
+  });
+});
