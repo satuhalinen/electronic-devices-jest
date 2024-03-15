@@ -199,3 +199,33 @@ describe("Test cases for get_total_price_of_products_by_type", () => {
     );
   });
 });
+
+describe("Test cases for get_a_product_matching_id", () => {
+  test("searchKey is found", () => {
+    const storage = new ProductStorage(datastorage);
+    const result = {
+      id: 1,
+      type: "tv",
+      price: 25,
+      manufacturer: "Electric devices",
+      colors: ["orange", "blue", "green"],
+      extras: {
+        model: "gold",
+        comments: "high quality",
+        energyclass: "A++",
+      },
+    };
+    expect(storage.get_a_product_matching_id(1)).toEqual(result);
+  });
+  test("searchKey is not found", () => {
+    const storage = new ProductStorage(datastorage);
+    const result = null;
+    expect(storage.get_a_product_matching_id(7)).toEqual(result);
+  });
+  test("searchKey is missing", () => {
+    const storage = new ProductStorage(datastorage);
+    expect(() => storage.get_total_price_of_products_by_type()).toThrow(
+      "missing parameter"
+    );
+  });
+});

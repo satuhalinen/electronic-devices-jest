@@ -47,6 +47,10 @@ class ProductStorage {
     }
     return sum;
   }
+  get_a_product_matching_id(searchValue) {
+    const product = this.#storage.find((item) => item.id === searchValue);
+    return product ? product : null;
+  }
 }
 
 module.exports = ProductStorage;
