@@ -1,4 +1,4 @@
-# Test cases for get_extras
+# Test cases for get_extras(searchKey)
 
 ## **get_extras(searchKey)**
 
@@ -16,9 +16,11 @@ searches the product matching the searchKey and if match is found returns the ex
 >
 > >
 
-## Test 1. matching searchKey found
+## Tests
 
-testdata is default data
+Testdata is default data.
+
+## Test 1. matching searchKey found
 
 ```js
 get_extras(1);
@@ -36,15 +38,9 @@ returns
 
 ## Test 2. matching searchKey is not found
 
-testdata is default data
-
-test with searchKey 6
-
-returns null
+Test with searchKey 6 returns null.
 
 ## Test 3. searchKey is missing
-
-testdata is default data
 
 ```js
 get_extras();

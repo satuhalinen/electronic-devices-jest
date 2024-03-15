@@ -1,4 +1,4 @@
-# Test cases for get_All_products_By_type
+# Test cases for get_All_products_By_type(searchValue)
 
 ## **get_All_products_By_type(searchValue)**
 
@@ -16,49 +16,9 @@ searches products with given type
 >
 > > If a parameter searchValue is missing, an exeption `'missing parameter'` is thrown
 
-### Examples
-
-`type` phone returns
-
-```json
-[
-  {
-    "id": 2,
-    "type": "phone",
-    "price": 15,
-    "manufacturer": "Penquin appliances",
-    "colors": ["white", "blue", "black"],
-    "extras": {
-      "model": "GT",
-      "comments": "-",
-      "energyclass": "E"
-    }
-  }
-]
-```
-
-`type` tv returns
-
-```json
-[
-  {
-    "id": 1,
-    "type": "tv",
-    "price": 25,
-    "manufacturer": "Electric devices",
-    "colors": ["orange", "blue", "green"],
-    "extras": {
-      "model": "gold",
-      "comments": "high quality",
-      "energyclass": "A++"
-    }
-  }
-]
-```
-
 ## Tests
 
-All tests use default data
+Test data is default data.
 
 ### Test 1. type phone
 
@@ -139,4 +99,4 @@ returns []
 
 ### Test 4. missing parameter
 
-If a parameter searchValue is missing, an exception `'missing parameter'` is thrown.
+An exception `'missing parameter'` is thrown.

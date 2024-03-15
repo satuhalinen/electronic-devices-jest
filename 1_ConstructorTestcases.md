@@ -1,16 +1,22 @@
-# Test cases for the constructor
+# Test cases for the constructor(jsondata)
 
 ## **constructor(jsondata)**
 
-Parameters:
-The data storage json object is passed in as a parameter `jsondata` to the constructor.
+Initializes ProductStorage object
 
-Returns:
+> Parameters:
+>
+> > The data storage json object is passed as a parameter to the constructor.
 
-Throws:
-If the parameter is missing, constructor throws an error `'data storage missing'`
+> Returns:
+>
+> >
 
-## Test 1: missing parameter throws an exception
+> Throws:
+>
+> > If the parameter is missing, constructor throws an error `'data storage missing'`
+
+## Test 1: missing parameter
 
 ```js
 new ProductStorage();

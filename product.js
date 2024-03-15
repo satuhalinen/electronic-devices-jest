@@ -48,6 +48,9 @@ class ProductStorage {
     return sum;
   }
   get_a_product_matching_id(searchValue) {
+    if (arguments.length < 1) {
+      throw new Error("missing parameter");
+    }
     const product = this.#storage.find((item) => item.id === searchValue);
     return product ? product : null;
   }

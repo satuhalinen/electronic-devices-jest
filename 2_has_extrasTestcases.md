@@ -1,6 +1,6 @@
 # Test cases for has_extras(searchKey)
 
-### **has_extras(searchKey)**
+## **has_extras(searchKey)**
 
 Method checks based on id if the product has `extras` or not.
 
@@ -16,9 +16,21 @@ Method checks based on id if the product has `extras` or not.
 >
 > >
 
+## Tests
+
 ### 1. product matching the searchKey has `extras` object and it is not an empty object
 
-testing with
+Testing
+
+```js
+has_extras(1);
+```
+
+with with default data returns true.
+
+### 2. product matching the searchKey has `extras` object but it is an empty object
+
+Testing
 
 ```js
 searchKey(1);
@@ -34,58 +46,29 @@ with testdata
     "price": 25,
     "manufacturer": "Electric devices",
     "colors": ["orange", "blue", "green"],
-    "extras": {
-      "model": "gold",
-      "comments": "high quality",
-      "energyclass": "A++"
-    }
-  }
-]
-```
-
-returns true
-
-### 2. product matching the searchKey has `extras` object but it is an empty object
-
-testdata
-
-```json
-[
-  {
-    "id": 1,
-    "type": "tv",
-    "price": 25,
-    "manufacturer": "Electric devices",
-    "colors": ["orange", "blue", "green"],
     "extras": {}
   }
 ]
 ```
 
-returns false
+returns false.
 
 ### 3. searchKey is missing
+
+Testing
 
 ```js
 has_extras();
 ```
 
-returns false
+with default data returns false.
 
 ### 4. extras is missing
 
-testdata
+Testing
 
-```json
-[
-  {
-    "id": 5,
-    "type": "phone",
-    "price": 123,
-    "manufacturer": "Electric devices",
-    "colors": ["orange", "red", "white"]
-  }
-]
+```js
+has_extras(5);
 ```
 
-returns false
+with default data returns false.

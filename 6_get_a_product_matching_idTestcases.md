@@ -1,6 +1,6 @@
-# Test cases for get_a_product_matching_id
+# Test cases for get_a_product_matching_id(searchKey)
 
-### **get_a_product_matching_id(searchKey)**
+## **get_a_product_matching_id(searchKey)**
 
 Method searches the datastorage for an object with given searchKey. Key is unique.
 
@@ -18,10 +18,11 @@ Method searches the datastorage for an object with given searchKey. Key is uniqu
 
 ## Tests
 
+Testdata is default data.
+
 ### Test 1. searchKey is found
 
-testdata is default data
-testing with searchKey 1 returns
+Testing with searchKey 1 returns
 
 ```json
 {
@@ -40,8 +41,8 @@ testing with searchKey 1 returns
 
 ### Test 2. searchKey is not found
 
-testing with searchKey 7 returns null
+Testing with searchKey 7 returns null.
 
 ### Test 3. searchKey is missing
 
-get_a_product_matching_id() throws an exception `'missing parameter'`
+get_a_product_matching_id() throws an exception `'missing parameter'`.
