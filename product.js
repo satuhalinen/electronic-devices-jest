@@ -31,6 +31,22 @@ class ProductStorage {
     const product = this.#storage.find((item) => item.id === searchKey);
     return product ? product.extras : null;
   }
+  get_total_price_of_products_by_type(searchValue) {
+    let sum = 0;
+    if (arguments.length < 1) {
+      throw new Error("missing parameter");
+    }
+    const products = this.#storage.filter((item) => item.type === searchValue);
+    if (products.length === 0) {
+      throw new Error("nothing found with given searchValue");
+    }
+    for (const product of this.#storage) {
+      if (product.type === searchValue) {
+        sum = sum + product.price;
+      }
+    }
+    return sum;
+  }
 }
 
 module.exports = ProductStorage;

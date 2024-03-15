@@ -172,3 +172,30 @@ describe("Test cases for get_extras", () => {
     expect(storage.get_extras()).toEqual(result);
   });
 });
+
+describe("Test cases for get_total_price_of_products_by_type", () => {
+  test("test tv", () => {
+    const storage = new ProductStorage(datastorage);
+    const result = 25;
+    expect(storage.get_total_price_of_products_by_type("tv")).toEqual(result);
+  });
+  test("test phone", () => {
+    const storage = new ProductStorage(datastorage);
+    const result = 168;
+    expect(storage.get_total_price_of_products_by_type("phone")).toEqual(
+      result
+    );
+  });
+  test("no product with the given searchValue is not found", () => {
+    const storage = new ProductStorage(datastorage);
+    expect(() => storage.get_total_price_of_products_by_type("car")).toThrow(
+      "nothing found with given searchValue"
+    );
+  });
+  test("parameter searchValue is missing", () => {
+    const storage = new ProductStorage(datastorage);
+    expect(() => storage.get_total_price_of_products_by_type()).toThrow(
+      "missing parameter"
+    );
+  });
+});
