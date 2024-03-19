@@ -117,8 +117,8 @@ describe("Test cases for get_All_products_By_type", () => {
 });
 
 describe("Test cases for get_extras", () => {
+  const storage = new ProductStorage(datastorage);
   test("matching searchKey found", () => {
-    const storage = new ProductStorage(datastorage);
     const result = {
       model: "gold",
       comments: "high quality",
@@ -127,38 +127,33 @@ describe("Test cases for get_extras", () => {
     expect(storage.get_extras(1)).toEqual(result);
   });
   test("matching searchKey is not found", () => {
-    const storage = new ProductStorage(datastorage);
     const result = null;
     expect(storage.get_extras(6)).toEqual(result);
   });
   test("searchKey is missing", () => {
-    const storage = new ProductStorage(datastorage);
     const result = null;
     expect(storage.get_extras()).toEqual(result);
   });
 });
 
 describe("Test cases for get_total_price_of_products_by_type", () => {
+  const storage = new ProductStorage(datastorage);
   test("test tv", () => {
-    const storage = new ProductStorage(datastorage);
     const result = 25;
     expect(storage.get_total_price_of_products_by_type("tv")).toEqual(result);
   });
   test("test phone", () => {
-    const storage = new ProductStorage(datastorage);
     const result = 168;
     expect(storage.get_total_price_of_products_by_type("phone")).toEqual(
       result
     );
   });
   test("no product with the given searchValue is not found", () => {
-    const storage = new ProductStorage(datastorage);
     expect(() => storage.get_total_price_of_products_by_type("car")).toThrow(
       "nothing found with given searchValue"
     );
   });
   test("parameter searchValue is missing", () => {
-    const storage = new ProductStorage(datastorage);
     expect(() => storage.get_total_price_of_products_by_type()).toThrow(
       "missing parameter"
     );
@@ -166,8 +161,8 @@ describe("Test cases for get_total_price_of_products_by_type", () => {
 });
 
 describe("Test cases for get_a_product_matching_id", () => {
+  const storage = new ProductStorage(datastorage);
   test("searchKey is found", () => {
-    const storage = new ProductStorage(datastorage);
     const result = {
       id: 1,
       type: "tv",
@@ -183,12 +178,10 @@ describe("Test cases for get_a_product_matching_id", () => {
     expect(storage.get_a_product_matching_id(1)).toEqual(result);
   });
   test("searchKey is not found", () => {
-    const storage = new ProductStorage(datastorage);
     const result = null;
     expect(storage.get_a_product_matching_id(7)).toEqual(result);
   });
   test("searchKey is missing", () => {
-    const storage = new ProductStorage(datastorage);
     expect(() => storage.get_a_product_matching_id()).toThrow(
       "missing parameter"
     );

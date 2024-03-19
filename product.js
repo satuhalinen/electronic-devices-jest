@@ -19,13 +19,8 @@ class ProductStorage {
     if (arguments.length < 1) {
       throw new Error("missing parameter");
     }
-    const objectsFound = [];
-    for (const product of this.#storage) {
-      if (product.type === searchValue) {
-        objectsFound.push(product);
-      }
-    }
-    return objectsFound;
+    const products = this.#storage.filter((item) => item.type === searchValue);
+    return products;
   }
   get_extras(searchKey) {
     const product = this.#storage.find((item) => item.id === searchKey);
@@ -40,10 +35,8 @@ class ProductStorage {
     if (products.length === 0) {
       throw new Error("nothing found with given searchValue");
     }
-    for (const product of this.#storage) {
-      if (product.type === searchValue) {
-        sum = sum + product.price;
-      }
+    for (const product of products) {
+      sum = sum + product.price;
     }
     return sum;
   }

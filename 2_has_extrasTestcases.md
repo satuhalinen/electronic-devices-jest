@@ -26,14 +26,14 @@ Testing
 has_extras(1);
 ```
 
-with with default data returns true.
+with default data returns true.
 
 ### 2. product matching the searchKey has `extras` object but it is an empty object
 
 Testing
 
 ```js
-searchKey(1);
+has_extras(1);
 ```
 
 with testdata
